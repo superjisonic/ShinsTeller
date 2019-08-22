@@ -185,7 +185,7 @@
 }
 /* 2.3 header middle css here */
 .header_middle {
-	background: #03a9f4;
+	background: #EA3A3C;
 	padding: 27px 0 28px;
 }
 .search_form form {
@@ -201,7 +201,6 @@
     border: none;
     height: 100%;
     padding: 0 10px;
-    border-right: 1px solid #03a9f4;
     color: #999;
 }
 .nice-select {
@@ -1642,6 +1641,9 @@
 .header_middle.middle_two {
 	background: #fff;
 }
+img.logo_white{
+	display: none;
+}
 .search_form.form_two form {
 	border: 1px solid #ddd;
 }
@@ -1909,9 +1911,7 @@
 	border: 1px solid #ddd;
 	height: 45px;
 }
-.search_form.form_four form input {
-	border-right: 1px solid #ddd;
-}
+
 .header_widget.widget_four > ul > li > a {
 	color: #3f3f3f;
 	border: none;

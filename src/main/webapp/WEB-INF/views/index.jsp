@@ -27,6 +27,7 @@
         <div class="header_area">
            
             <!--header top start-->
+        <!--    
             <div class="header_top top_four">
                 <div class="container">
                     <div class="row">
@@ -66,177 +67,29 @@
                     </div>
                 </div>
             </div>
+        -->
             <!--header middel-->
             <div class="header_middle middle_four">
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3">
+                    <div class="row align-items-end">
+                        <div class="offset-lg-1 col-lg-2">
                             <div class="logo logo_four">
-                                <a href="index.html"><img src="/resources/assets/img/logo/logo2.png" alt=""></a>
+                                <a href="index.html">
+                                	<img class="logo_white" src="/resources/assets/img/logo/Shinsegae+Shopping+White.png" alt="">
+                                	<img class="logo_red" src="/resources/assets/img/logo/Shinsegae+Shopping+Red.png" alt="">
+                                </a>
                             </div>
                         </div>
-                        <div class="col-lg-9">
-                            <div class="main_menu_inner menu_inner_four">
-                                <div class="main_menu menu_four d-none d-lg-block">
-                                    <nav>
-                                        <ul>
-                                            <li class="active"><a href="index.html">Home <i class="fa fa-angle-down"></i></a>
-                                                <ul class="sub_menu">
-                                                    <li class="active"><a href="index.html">home shop 1</a></li>
-                                                    <li><a href="index-2.html">home shop 2</a></li>
-                                                    <li><a href="index-3.html">home shop 3</a></li>
-                                                    <li><a href="index-4.html">home shop 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown_item"><a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
-                                                <ul class="sub_menu">
-                                                    <li><a href="shop-list.html">shop list</a></li>
-                                                    <li><a href="shop-fullwidth.html">shop Full Width Grid</a></li>
-                                                    <li><a href="shop-fullwidth-list.html">shop Full Width list</a></li>
-                                                    <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar-list.html">shop list Right Sidebar</a></li>
-                                                    <li><a href="/product.sst">Product Details</a></li>
-                                                    <li><a href="/product.sst">Product Details Video</a></li>
-                                                    <li><a href="/product.sst">Product Details Gallery</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown_item"><a href="portfolio.html">Portfolio <i class="fa fa-angle-down"></i></a>
-                                                <ul class="sub_menu">
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">single portfolio</a> </li>
-                                                </ul>
-                                            </li>
-                                            <li class="dropdown_item"><a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
-                                                <ul class="sub_menu">
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-fullwidth.html">Blog FullWidth</a></li>
-                                                    <li><a href="blog-sidebar.html">Blog  Sidebar</a></li>
-                                                    <li><a href="blog-details.html">Blog  Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li class="mega_item"><a href="#">Features <i class="fa fa-angle-down"></i></a>
-                                                <ul class="mega_menu">
-                                                    <li><a href="#">Column1</a>
-                                                        <ul class="mega_dropdown">
-                                                            <li><a href="shop.html">Shop </a></li>
-                                                            <li><a href="/product.sst">Product Details</a></li>
-                                                            <li><a href="cart.html">Cart </a></li>
-                                                            <li><a href="checkout.html">Checkout </a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="my-account.html">My account</a></li>
-                                                            <li><a href="login.html">Login</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Column2</a>
-                                                        <ul class="mega_dropdown">
-                                                            <li><a href="blog.html">blog</a></li>
-                                                            <li><a href="blog-fullwidth.html">blog full width</a></li>
-                                                            <li><a href="blog-sidebar.html">blog  Sidebar </a></li>
-                                                            <li><a href="blog-details.html">blog details</a></li>
-                                                            <li><a href="404.html">404</a></li>
-                                                            <li><a href="faq.html">Frequently Questions</a></li>
-                                                            <li><a href="services.html">Service</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Column3</a>
-                                                        <ul class="mega_dropdown">
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="about-2.html">About Us 2</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="contact-2.html">Contact us 2</a></li>
-                                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
+                        <div class="offset-lg-1 col-lg-6">
+                            <!-- 여기에 원래 헤더메뉴 있었음 * 텍스트파일로 따로 빼놓고 삭제함 -->
+                            <div class="search_form form_four">
+                            <form action="#">
+                                <input placeholder="Enter your search..." type="text">
                                 
-                                <div class="mobile-menu mobile_menu_four d-lg-none">
-                                    <nav>
-                                         <ul>
-                                            <li>
-                                               <a href="index.html">Home</a>
-                                                <ul>
-                                                    <li><a href="index.html">home shop 1</a></li>
-                                                    <li><a href="index-2.html">home shop 2</a></li>
-                                                    <li><a href="index-3.html">home shop 3</a></li>
-                                                    <li><a href="index-4.html">home shop 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop.html">Shop</a>
-                                                <ul>
-                                                    <li><a href="shop-list.html">shop list</a></li>
-                                                    <li><a href="shop-fullwidth.html">shop Full Width Grid</a></li>
-                                                    <li><a href="shop-fullwidth-list.html">shop Full Width list</a></li>
-                                                    <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
-                                                    <li><a href="shop-right-sidebar-list.html">shop list Right Sidebar</a></li>
-                                                    <li><a href="/product.sst">Product Details</a></li>
-                                                    <li><a href="/product.sst">Product Details Video</a></li>
-                                                    <li><a href="/product.sst">Product Details Gallery</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="portfolio.html">Portfolio</a>
-                                                <ul>
-                                                    <li><a href="portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio-details.html">single portfolio</a> </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul>
-                                                    <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog-fullwidth.html">Blog FullWidth</a></li>
-                                                    <li><a href="blog-sidebar.html">Blog  Sidebar</a></li>
-                                                    <li><a href="blog-details.html">Blog  Details</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about.html">About Us</a></li>
+                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 
-                                            <li><a href="contact.html">Contact Us</a></li>
-                                            <li><a href="#">Features</a>
-                                                <ul>
-                                                    <li><a href="#">Column1</a>
-                                                        <ul>
-                                                            <li><a href="shop.html">Shop </a></li>
-                                                            <li><a href="/product.sst">Product Details</a></li>
-                                                            <li><a href="cart.html">Cart </a></li>
-                                                            <li><a href="checkout.html">Checkout </a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="my-account.html">My account</a></li>
-                                                            <li><a href="login.html">Login</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Column2</a>
-                                                        <ul>
-                                                            <li><a href="blog.html">blog</a></li>
-                                                            <li><a href="blog-fullwidth.html">blog full width</a></li>
-                                                            <li><a href="blog-sidebar.html">blog  Sidebar </a></li>
-                                                            <li><a href="blog-details.html">blog details</a></li>
-                                                            <li><a href="404.html">404</a></li>
-                                                            <li><a href="faq.html">Frequently Questions</a></li>
-                                                            <li><a href="services.html">Service</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Column3</a>
-                                                        <ul>
-                                                            <li><a href="about.html">About Us</a></li>
-                                                            <li><a href="about-2.html">About Us 2</a></li>
-                                                            <li><a href="contact.html">Contact</a></li>
-                                                            <li><a href="contact-2.html">Contact us 2</a></li>
-                                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
+                            </form>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -249,7 +102,7 @@
         <div class="header_bottom_four">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-12">
                         <div class="categories_menu categorie_menu_four">
                             <div class="categories_title ca_title_two">
                                 <h2 class="categori_toggle"><img src="/resources/assets/img/logo/categorie.png" alt=""> All categories</h2>
@@ -420,95 +273,12 @@
                             </div>
                         </div>
                     </div>
+                    <!--
                     <div class="col-lg-6">
-                        <div class="search_form form_four">
-                            <form action="#">
-                                <input placeholder="Enter your search..." type="text">
-                                <div class="select_categories select_three selcct_c_four">
-                                    <select name="select" id="categorie">
-                                        <option selected value="1">All Categories</option>
-                                        <option value="2">Electronics</option>
-                                        <option value="3">--Laptops</option>
-                                        <option value="4">---Dell Laptops</option>
-                                        <option value="5">---HP Laptops</option>
-                                        <option value="5">---Lenovo Laptops</option>
-                                        <option value="5">--Camera</option>
-                                        <option value="5">---Digital Cameras</option>
-                                        <option value="5">---Apple Laptops</option>
-                                        <option value="5">---Camcorders</option>
-                                        <option value="5">---Photo Accessories</option>
-                                        <option value="5">---Memory Cards</option>
-                                        <option value="5">--Smart Phone</option>
-                                        <option value="5">---Samsung Phones</option>
-                                        <option value="5">---Motorola Phones</option>
-                                        <option value="5">--Television</option>
-                                        <option value="5">----Dresses</option>
-                                        <option value="5">---Sweater</option>
-                                        <option value="5">----Evening</option>
-                                        <option value="5">---Day</option>
-                                        <option value="5">---Sports</option>
-                                        <option value="5">---Shoulder</option>
-                                        <option value="5">---Satchels</option>
-                                        <option value="5">---kids</option>
-                                        <option value="5">---coats</option>
-                                    </select>
-                                </div>
-                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        	여기에 원래 서치 바 있었음 
+                    </div>
+                    -->
 
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="header_widget widget_four about_widget text-right">
-                            <ul>
-                                <li class="shopping_cart"><a href="#" title="View my shopping cart"><i class="fa fa-shopping-bag"></i></a> 
-                                    <span class="cart__quantity">2</span>
-                                    <div class="mini_cart cart_left">
-                                        <div class="cart_item">
-                                           <div class="cart_img">
-                                               <a href="#"><img src="/resources/assets/img/cart/mini_cart1.jpg" alt=""></a>
-                                           </div>
-                                            <div class="cart_info">
-                                                <a href="#">Handbag feugiat</a>
-                                                <span class="cart_price">$115.00</span>
-                                                <span class="quantity">Qty: 1</span>
-                                            </div>
-                                            <div class="cart_remove">
-                                                <a title="Remove this item" href="#"><i class="fa fa-times-circle"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="cart_item">
-                                           <div class="cart_img">
-                                               <a href="#"><img src="/resources/assets/img/cart/mini_cart2.jpg" alt=""></a>
-                                           </div>
-                                            <div class="cart_info">
-                                                <a href="#">Handbag fringilla</a>
-                                                <span class="cart_price">$115.00</span>
-                                                <span class="quantity">Qty: 1</span>
-                                            </div>
-                                            <div class="cart_remove">
-                                                <a title="Remove this item" href="#"><i class="fa fa-times-circle"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="cart_price_line">
-                                            <span> Shipping </span>
-                                            <span class="prices">  $7.00  </span>
-                                        </div>
-                                        <div class="cart_total">
-                                            <span> Shipping </span>
-                                            <span class="prices">  $7.00  </span>
-                                        </div>
-                                        <div class="cart_button pt-20">
-                                            <a href="checkout.html"> Check out</a>
-                                        </div>
-                                    </div>                                                                                                                                                               
-                                </li>
-                                <li><a href="wishlist.html" title="My wishlist"><i class="fa fa-heart-o"></i></a></li>
-                                <li><a href="#" title="My Compare"><i class="fa fa-exchange"></i></a></li>
-                            </ul>
-                            <!--mini cart-->
-                        </div> 
-                    </div>
                 </div>
             </div>
         </div>
@@ -1743,7 +1513,7 @@
 		<!-- all js here -->
         <script src="/resources/assets/js/vendor/jquery-1.12.0.min.js"></script>
         <script src="/resources/assets/js/popper.js"></script>
-        <script src="/resources/assets /js/bootstrap.min.js"></script>
+        <script src="/resources/assets/js/bootstrap.min.js"></script>
         <script src="/resources/assets/js/plugins.js"></script>
         <script src="/resources/assets/js/main.js"></script>
     </body>

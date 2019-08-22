@@ -266,7 +266,6 @@
     .header_top {
         padding: 22px 0 23px;
     }
-   
 	.header_right_info,.header_widget {
         text-align: center !important;
     }
@@ -998,6 +997,7 @@
         padding: 17px 0 18px;
     }
    .logo {
+   		width: 20%;
         text-align: center;
         margin-bottom: 18px;
     }
@@ -1361,11 +1361,12 @@
 
     .header_middle.middle_four {
     	padding: 0;
+    	
     }
     .logo.logo_four {
+    	text-align:center;
         margin: 18px 0;
     }
-
     .mobile-menu.mobile_menu_four a.meanmenu-reveal {
         top: -43px;
     }
