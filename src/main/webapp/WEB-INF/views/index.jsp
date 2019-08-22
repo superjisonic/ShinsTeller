@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -21,6 +22,14 @@
         <script src="/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+    <%-- products 정보 조회 --%>
+    <%-- <c:forEach items="${ products }" var="index">
+    	제목 : ${ index.prdtitle }<br>
+    	vod명 : ${ index.vodname }<br>
+    	img명 : ${ index.imgname }<br>
+    	가격 : ${ index.price }<br>
+    </c:forEach> --%>
+    
             <!-- Add your site or application content here -->
             
          <!--header area start-->

@@ -3,7 +3,9 @@ package com.sinc.shinsteller.index.service;
 import java.util.List;
 import java.util.Map;
 
+import com.sinc.shinsteller.index.vo.IndexVO;
+
 public interface IndexService {
-	//public List<BoardVO> showAll();
+	List<IndexVO> getProducts();
 	
 }
