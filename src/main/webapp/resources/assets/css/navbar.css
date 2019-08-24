@@ -1,0 +1,33 @@
+/* CSS used here will be applied after bootstrap.css */
+html,body {
+	height:100%;
+    padding-top:70px;
+}
+
+.fixed-top #first { 
+  -webkit-transition:padding 0.2s ease;
+  -moz-transition:padding 0.2s ease; 
+  -o-transition:padding 0.2s ease;        
+  transition:padding 0.2s ease;  
+}
+.navbar {
+	background-color:red;
+}
+.navbar-brand img {
+  height: 40px;
+  /* put value of image height as your need */
+  float: left;
+  marginn-right: 7px;
+}
+.affix #first {
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;  
+  -o-transition:padding 0.2s linear;         
+  transition:padding 0.2s linear;  
+}
+
+section {
+    min-height:calc(100% - 70px);
+}
