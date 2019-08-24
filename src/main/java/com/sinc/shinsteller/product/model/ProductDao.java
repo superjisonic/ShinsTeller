@@ -1,9 +1,10 @@
 package com.sinc.shinsteller.product.model;
 
-import java.util.List;
-import java.util.Map;
+import com.sinc.shinsteller.product.vo.ProductVO;
 
 public interface ProductDao {
-	//public List<ProductVO> selectAll();
+
+	ProductVO getProductRow(int prdno);
+
 	
 }

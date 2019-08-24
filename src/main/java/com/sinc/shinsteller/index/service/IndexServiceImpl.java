@@ -18,14 +18,9 @@ public class IndexServiceImpl implements IndexService{
 	private IndexDao daoImpl;
 
 	@Override
-	public List<IndexVO> getProducts() {
+	public List<IndexVO> getProducts() {	// 메인화면에 보여줄 상품 리스트 조회
 		System.out.println("IndexServiceImpl >>>>> getProducts");
 		return daoImpl.selectProductsRow();
 	}
-	
-//	@Override
-//	public List<BoardVO> showAll() {
-//		return daoImpl.selectAll();
-//	}
 	
 }

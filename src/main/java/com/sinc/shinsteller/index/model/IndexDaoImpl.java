@@ -17,14 +17,9 @@ public class IndexDaoImpl implements IndexDao{
 	private SqlSession session;
 
 	@Override
-	public List<IndexVO> selectProductsRow() {
+	public List<IndexVO> selectProductsRow() {	// 메인화면에 보여줄 상품 리스트 조회
 		System.out.println("IndexDaoImpl >>>>> selectProductsRow");
 		return session.selectList("com.sinc.shinsteller.index.selectProducts");
 	}
-	
-//	@Override
-//	public List<BoardVO> selectAll() {
-//		return session.selectList("com.sinc.board.all");
-//	}
 	
 }

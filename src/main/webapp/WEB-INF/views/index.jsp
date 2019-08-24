@@ -23,12 +23,12 @@
     </head>
     <body>
     <%-- products 정보 조회 --%>
-    <%-- <c:forEach items="${ products }" var="index">
+    <c:forEach items="${ products }" var="index">
+    	상품번호 : ${ index.prdno }<br>
     	제목 : ${ index.prdtitle }<br>
-    	vod명 : ${ index.vodname }<br>
-    	img명 : ${ index.imgname }<br>
+    	상품명 : ${ index.prdname }<br>
     	가격 : ${ index.price }<br>
-    </c:forEach> --%>
+    </c:forEach>
     
             <!-- Add your site or application content here -->
             

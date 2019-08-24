@@ -20,11 +20,12 @@ public class IndexController {
 	@RequestMapping(value = "/")
 	public String index(Model model) {
 		System.out.println("IndexController >>>>> index");
+		// 메인화면에 보여줄 상품 리스트 조회
 		List<IndexVO> products = serviceImpl.getProducts();
 		if(products != null) {	// 상품 리스트가 정상적으로 넘어오면
 			model.addAttribute("products", products);
 		}
-		return "index";
+		return "index1";
 	}
 	
 	@RequestMapping(value = "/index.sst")
@@ -34,7 +35,7 @@ public class IndexController {
 		if(products != null) {	// 상품 리스트가 정상적으로 넘어오면
 			model.addAttribute("products", products);
 		}
-		return "index";
+		return "index1";
 	}
 	
 }

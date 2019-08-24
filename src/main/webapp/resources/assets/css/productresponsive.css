@@ -1386,10 +1386,11 @@
         text-transform: uppercase;
     }
     .single_slider.single_sl_four {
-        height: 350px;
+        /*height: 350px;*/
+        vertical-align: middle;
     }
     .slider_active.slider_a_four.owl-carousel .owl-dots {
-        display: none;
+         /*display: none;*/
     }
     .slider_content.sale_c_four.sale {
         margin-left: 0;
@@ -1503,7 +1504,7 @@
 	font-size: 12px;
 }
     .product_details_tab_button ul li {
-        width: 100%;
+        width: 25%;
     }
     .product_d_tab_content_inner {
         padding: 0; ;
