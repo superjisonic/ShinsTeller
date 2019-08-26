@@ -25,7 +25,7 @@ public class IndexController {
 		if(products != null) {	// 상품 리스트가 정상적으로 넘어오면
 			model.addAttribute("products", products);
 		}
-		return "index1";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/index.sst")
@@ -35,7 +35,7 @@ public class IndexController {
 		if(products != null) {	// 상품 리스트가 정상적으로 넘어오면
 			model.addAttribute("products", products);
 		}
-		return "index1";
+		return "index";
 	}
 	
 }

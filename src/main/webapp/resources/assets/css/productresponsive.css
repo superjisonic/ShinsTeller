@@ -1510,7 +1510,7 @@
         padding: 0; ;
     }
     .product_d_tab_content_inner {
-        padding: 0 30px;
+        padding: 20px 30px;
     }
     
     .top_title.p_details.mb-10 h2 {
@@ -2135,7 +2135,7 @@
        flex-direction: column;
     }
     .product_d_tab_content_item {
-        text-align: center;
+        text-align: left;
         margin-bottom: 10px;
     }
     .product_d_tab_content_item:last-child {
