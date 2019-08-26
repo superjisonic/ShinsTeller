@@ -7,6 +7,12 @@
  	
 	<!-- 차후에 url 바꾸는 작업 필요 -->
 
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@oracle11gr2.c6wlhm4f7ae9.ap-northeast-2.rds.amazonaws.com:1521:ORCL"></property>
+		<property name="username" value="shinsteller"></property>
+		<property name="password" value="ssteller0819"></property>
+	</bean>   -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"></property>

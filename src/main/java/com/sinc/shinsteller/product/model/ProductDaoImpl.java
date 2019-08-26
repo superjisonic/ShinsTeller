@@ -1,22 +1,21 @@
 package com.sinc.shinsteller.product.model;
 
-import java.util.List;
-import java.util.Map;
-
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.sinc.shinsteller.product.vo.ProductVO;
 
 @Repository("productD")
 public class ProductDaoImpl implements ProductDao{
 
 	@Resource(name="sqlSession")
 	private SqlSession session;
-	
-//	@Override
-//	public List<BoardVO> selectAll() {
-//		return session.selectList("com.sinc.board.all");
-//	}
-	
+
+	@Override
+	public ProductVO getProductRow(int prdno) {
+		System.out.println("ProductDaoImpl >>>>> getProductRow");
+		return session.selectOne("com.sinc.shinsteller.product.selectProduct", prdno);
+	}
 }
