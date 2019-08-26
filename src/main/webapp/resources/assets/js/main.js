@@ -12,6 +12,8 @@
             $(".sticky-header").addClass("sticky");
            }
     });
+    
+    
 
     /*----------------------------
     jQuery MeanMenu
