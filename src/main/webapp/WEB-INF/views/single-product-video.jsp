@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
     <head>
@@ -22,51 +24,63 @@
     </head>
     <body>
     
-    	<div style="background-color: skyblue;">
+    	<%-- <div style="background-color: skyblue;">
     	상품번호 : ${ product.prdno }<br>
     	제목 : ${ product.prdtitle }<br>
     	상품명 : ${ product.prdname }<br>
     	가격 : ${ product.price }<br>
     	브랜드 : ${ product.brand }<br>
     	제조사/원산지 : ${ product.manufacturer }<br>
-        </div>    
-          <!--header area start-->
-        <div class="header_area" style="background-color:#ccc;">
-           	헤더파일 지선 완성 후 추가하기 
-        </div>
-         <!--header area end-->  
-         
-     
+    	대분류 : ${ product.category1 }<br>
+    	소분류 : ${ product.category2 }<br>
+        </div>  --%>  
+		
+        <nav class="navbar navbar-light fixed-top detail_top_bar">
+        <button type="button" class="prdBtn" onclick="javascript:history.back();"><img src="/resources/assets/img/product/prdBackBtn.png" /></button>
+  		<div class="top_bar_name">상품상세</div><!-- 네비게이션 바의 콘텐츠 -->
+		<button type="button" class="prdBtn"><img src="/resources/assets/img/product/prdSearchBtn.png" /></button>
+		<button type="button" class="prdBtn"><img src="/resources/assets/img/product/prdCartBtn.png" /></button>
+		</nav>
+		
+		<div class="product_category">
+         	홈 > ${ product.category1 } > ${ product.category2 }
+         </div>
+         <div class="product_broadInfo">
+         	<button type="button" class="broadBtn">
+         	<img src="/resources/assets/img/product/bellBtn.png" />
+         	방송알림신청
+         	</button>
+         </div>
         <!--product details start-->
                 <!--baner slide show-->
         <div class="banner_slide_show slide_show_two mb-40">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 product_body">
                         <div class="banner_slider">
                             <div class="slider_active slider_a_four owl-carousel">
                                 <div class="single_slider single_sl_four">
-                                	<img class="prdimg" src="/resources/images/${ product.prdname }12.jpg" />
+                                	<img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
-                                	<img src="/resources/images/${ product.prdname }2.jpg" />
+                                	<img src="/resources/images/${ product.prdname}2.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }3.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }4.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -81,10 +95,11 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-6">
                         <div class="product_d_right">
-                            <h1>[TV쇼핑] ${ product.prdtitle }</h1>
+                            <h1><span style="color: #ea3a3c; padding-right: 10px;">[TV쇼핑]</span> ${ product.prdtitle }</h1>
                             <div class="small_product_price mb-15">
-                                <span class="new_price"> $${ product.price } </span>
-                                <span class="old_price">  $${ product.price + 1000 }  </span>
+                                <span class="new_price"> <fmt:formatNumber value="${ product.price }" pattern="#,###" /></span>원
+                                <span class="old_price"> <fmt:formatNumber value="${ product.price + 1000 }" pattern="#,###" /></span>원&nbsp;
+                                <img src="/resources/assets/img/product/questionMark.png" />
                             </div>
                         </div>
                     </div>
@@ -93,11 +108,29 @@
         </div>
         <!--product details end-->
         
+        <div class="share_choose_tap">
+        	<div class="share_tap"><img src="/resources/assets/img/product/shareBtn.png" />공유하기</div>
+        	<span class="seperate">|</span>
+        	<div class="choose_tap"><img src="/resources/assets/img/product/chooseBtn.png" />찜하기</div>
+        </div>
+        
+        <div class="bonus_service_tap">
+        	<div class="card_shipping_tap" style="border-bottom: 1px solid #e5e5e5;">
+        	<img class="iconimg" src="/resources/assets/img/product/cardIcon.png"/>무이자 할부 카드 확인
+        	<img class="detailimg" src="/resources/assets/img/product/cardDetailBtn.png" />
+        	</div>
+        	<div class="card_shipping_tap">
+        	<img class="iconimg" src="/resources/assets/img/product/ShippingIcon.png"/>무료배송/ 평균 배송일 3일
+        	<img class="detailimg" src="/resources/assets/img/product/shippingDetail.png" />
+        	</div>
+        	<img src="/resources/assets/img/product/bonusService1.jpg" />
+        	<img src="/resources/assets/img/product/bonusService2.jpg" />
+        </div>
         <!--product details tab-->
-        <div class="product__details_tab mb-40">
+        <div class="product_details_tab mb-40" style="display: inline-block;">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 ">
+                    <div class="col-12 product_body">
                         <div class="product_details_tab_inner"> 
                             <div class="product_details_tab_button">    
                                 <ul class="nav" role="tablist">
@@ -118,41 +151,50 @@
                             <div class="tab-content product_details_content">
                                 <div class="tab-pane fade show active" id="info" role="tabpanel" >
                                     <div class="product_d_tab_content">
-                                        <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail1.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail2.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail3.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail4.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail5.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail6.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail7.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail8.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail9.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail10.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail11.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail12.jpg"/>
                                     </div>    
                                 </div>
                                 <div class="tab-pane fade" id="sheet" role="tabpanel">
+                                    <div class="product_d_tab_content">
                                     <div class="product_d_table">
                                         <table>
                                             <tbody>
                                                 <tr>
-                                                    <td class="first_child">Compositions</td>
-                                                    <td>Polyester</td>
+                                                    <td class="first_child">상품번호</td>
+                                                    <td>${ product.prdno }</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="first_child">Styles</td>
-                                                    <td>Girly</td>
+                                                    <td class="first_child">브랜드</td>
+                                                    <td>${ product.brand }</td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="first_child">Properties</td>
-                                                    <td>Short Dress</td>
+                                                    <td class="first_child">제조사/원산지</td>
+                                                    <td>${ product.manufacturer }</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="product_d_tab_content">
-                                        <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                                        <p>여기에 내용 추가할까?</p>
                                     </div> 
                                 </div>
                                 <div class="tab-pane fade" id="reviews" role="tabpanel">
-                                    <div class="product_d_tab_content">
-                                        <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
-                                    </div>
                                     <div class="product_d_tab_content_inner">
                                         <div class="product_d_tab_content_item">
+                                        <div class="row">
                                             <div class="samll_product_ratting">
+                                            <span class="ratting_number">8.6</span>
                                             <ul>
-                                               <li>Grade </li>
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -160,53 +202,43 @@
                                                 <li><a class="comment_form" href="#"><i class="fa fa-star"></i></a></li>
                                             </ul>
                                             </div>
-                                             <strong>Posthemes</strong> 
-                                             <p>09/07/2018</p>
-                                           
-                                        </div>
-                                        <div class="product_d_tab_content_item">
-                                            <strong>demo</strong>
-                                            <p>That's OK!</p>
-                                        </div>
-                                    </div> 
-                                      <div class="product_review_form">
-                                        <form action="#">
-                                            <h2>Add a review </h2>
-                                            <p>Your email address will not be published. Required fields are marked </p>
-                                            <div class="samll_product_ratting review_rating">
-                                               <span>Your rating</span>
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
+                                            <div class="samll_product_ratting_left">
+                                            <span class="left_name">품질</span>
+                                            <ul>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star comment_form" href="#"><i class="fa fa-star"></i></a></li>
+                                            </ul>
+                                            <br>
+                                            <span class="left_name">가격</span>
+                                            <ul>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star comment_form" href="#"><i class="fa fa-star"></i></a></li>
+                                            </ul><br>
+                                            <span class="left_name">포장</span>
+                                            <ul>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star comment_form" href="#"><i class="fa fa-star"></i></a></li>
+                                            </ul><br>
+                                            <span class="left_name">배송기간</span>
+                                            <ul>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star" href="#"><i class="fa fa-star"></i></a></li>
+                                                <li><a class="left_star comment_form" href="#"><i class="fa fa-star"></i></a></li>
+                                            </ul><br>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <div class="review_form_comment">
-                                                        <label for="review_comment">Your review </label>
-                                                        <textarea name="comment" id="review_comment" ></textarea>
-                                                    </div>
-                                                </div> 
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="review_form_author">
-                                                        <label for="author">Name</label>
-                                                        <input id="author"  type="text">
-                                                    </div>
-                                                </div> 
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="review_form_author">
-                                                        <label for="email">Email </label>
-                                                        <input id="email"  type="text">
-                                                    </div>
-                                                </div>  
-                                            </div>
-                                            <button type="submit">Submit</button>
-                                         </form>   
-                                    </div>   
-                                       
+                                         </div>    
+                                    </div>          
                                 </div>
                             </div>  
 
@@ -215,6 +247,7 @@
                         
                 </div>
             </div>
+        </div>
         </div>
         <!--product details tab end-->
         

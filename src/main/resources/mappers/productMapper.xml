@@ -7,7 +7,7 @@
 	<select id="selectProduct"
 			parameterType="int"
 			resultType="product">
-		SELECT PRDNO, PRDNAME, PRDTITLE, PRICE, BRAND, MANUFACTURER
+		SELECT PRDNO, PRDNAME, PRDTITLE, PRICE, BRAND, MANUFACTURER, CATEGORY1, CATEGORY2
 		FROM SST_PRODUCTS
 		WHERE PRDNO= #{ prdno }
 	</select>

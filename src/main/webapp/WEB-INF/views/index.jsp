@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -14,8 +13,8 @@
 		
 		<!-- all css here -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="/resources/assets/css/main.css">
-		<link rel="stylesheet" href="/resources/assets/css/wave.css">
+		    <link rel="stylesheet" href="/resources/assets/css/main.css">
+		    <link rel="stylesheet" href="/resources/assets/css/wave.css">
         <link rel="stylesheet" href="/resources/assets/css/navbar.css">
         <script src="/resources/assets/js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -27,6 +26,7 @@
 		        <a href="#" class="navbar-brand" id="logo">
 		        	<img src="/resources/assets/img/logo/Shinsegae+Shopping+White.png" alt="ShinsTeller">
 		        </a>
+
 		        <div class="navbar-collapse collapse">
 		            <ul class="nav navbar-nav">
 		                <li class="nav-item"><a href="#" class="nav-link">App</a>
@@ -88,8 +88,6 @@
 		    <div><a class="next" href="#"></a></div>
 		  </nav>
 		</section>
-		
-		
 
     	<section>
     		<div class="container">
