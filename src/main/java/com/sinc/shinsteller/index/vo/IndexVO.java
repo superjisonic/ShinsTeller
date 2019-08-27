@@ -1,9 +1,7 @@
 package com.sinc.shinsteller.index.vo;
 
-import java.io.Serializable;
-import java.util.List;
 
-public class IndexVO implements Serializable{
+public class IndexVO {
 	
 	// PRDNO, PRDNAME, PRDTITLE, PRICE
 	private int prdno;

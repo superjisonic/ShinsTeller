@@ -56,6 +56,108 @@
      2.  header css here
 ----*/
 
+.product_body {
+	padding: 0;
+}
+.detail_top_bar {
+	background-color: white;
+	padding: 10px;
+	border-bottom: 1px solid #d6d6d6; 
+}
+.detail_top_bar .top_bar_name {
+	width: 50%;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-align: center;
+	color: black;
+}
+.detail_top_bar .prdBtn {
+    width: 45px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: white;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.product_category {
+	margin-top: 60px;
+	padding: 5px 20px;
+	
+}
+
+.product_broadInfo {
+	background-color: #f2f3f5;
+	padding: 10px 20px;
+	text-align: right;
+}
+
+.product_broadInfo .broadBtn {
+	background-color: white;
+	height: 30px;
+	cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 700;
+	
+}
+
+.product_broadInfo .broadBtn img {
+	width: 20px;
+}
+
+.banner_slider {
+	border-bottom: 1px solid #d6d6d6;
+}
+
+.share_choose_tap {
+	border-top: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
+    height: 44px;
+    line-height: 44px;
+    color: #666;
+    font-size: 14px;
+    background: #f8f8f8;
+}
+.share_choose_tap .seperate {
+	width: 2%;
+	float: left;
+	text-align: center;
+	color: #ccc;
+}
+.share_choose_tap .share_tap, .share_choose_tap .choose_tap {
+	width: 49%;
+	float: left;
+	text-align: center;
+}
+
+.share_choose_tap img {
+	width: 30px;
+}
+.bonus_service_tap {
+	background-color: #eaebee;
+	padding: 5px 0;
+}
+.bonus_service_tap img {
+	margin: 5px 0px;
+}
+
+.bonus_service_tap .card_shipping_tap {
+	background-color: white;
+	padding: 10px;
+}
+.bonus_service_tap .card_shipping_tap .iconimg {
+	width: 5%;
+	margin-right: 2%;
+}
+
+.bonus_service_tap .card_shipping_tap .detailimg {
+	position: absolute;
+	width: 5%;
+	right: 5%;
+}
 .sticky-header.sticky {
 	position: fixed;
 	width: 100%;
@@ -815,14 +917,46 @@
 	margin-right: 5px;
 	position: relative;
 }
+.samll_product_ratting {
+	width: 50%;
+	text-align:center;
+}
+
+.samll_product_ratting_left {
+	width: 50%;
+	text-align: left;
+	padding-left: 30px;
+}
+
+.samll_product_ratting_left .left_name {
+	float: left;
+	width: 40%;
+}
+
+.samll_product_ratting_left .left_star {
+	float: left;
+    padding-right: 2px;
+    font-size: 13px;
+    color: #ea3a3c;
+}
+
+.samll_product_ratting_left .comment_form {
+    color: #999999;
+}
+.samll_product_ratting .ratting_number {
+	font-size: 30px;
+	font-weight: 700;
+	color: black;
+}
 .samll_product_ratting ul {
-	line-height: 17px;
+	line-height: 2em;
+    font-size: 20px;
 }
 .samll_product_ratting ul li {
   display: inline-block;
 }
 .samll_product_ratting ul li a {
-  color: #f0c808;
+  color: #ea3a3c;
 }
 .small_product_name a {
 	color: #555555;
@@ -840,15 +974,18 @@
 	width: 100%;
 }
 .small_product_price span {
-	font-weight: 600;
-	font-size: 16px;
-	color: #ea3a3c;
+	font-weight: 700;
+    font-size: 20px;
+    color: black
 }
 .small_product_price span.old_price {
 	color: #999999;
 	text-decoration: line-through;
 	font-size: 14px;
 	margin-left: 15px;
+}
+.small_product_price img {
+	width: 20px;
 }
 .small_product {
 	padding: 14px 15px 10px;
@@ -2473,22 +2610,24 @@
 .product_d_color ul li a.p_yellow {
 	background: rgb(241, 196, 15) none repeat scroll 0% 0%;
 }
+
 .product_details_tab_button ul li a {
 	display: block;
 	float: left;
 	text-transform: uppercase;
 	color: #5b5b5b;
-	font-size: 10px;
+	font-size: 13px;
 	font-weight: 700;
     position: relative;
+    padding: 10px 0px;
+    width: 80px;
+    margin: 0 10px;
+    text-align: center;
 }
 
-.product_details_tab_button {
-	border-bottom: 3px solid #ea3a3c;
-}
 .product_details_tab_button ul li a:hover,.product_details_tab_button ul li a.active{
-
     color: #ea3a3c;
+    border-bottom: 3px solid #ea3a3c;
 }
 .product_details_tab_button ul li a.active::before{
     border-left: 20px solid #ea3a3c;
@@ -2500,7 +2639,7 @@
 	border: 1px solid #ddd;
 }
 .product_d_table {
-	padding: 20px 30px;
+	padding: 20px 0px;
 }
 .product_d_table table {
 	width: 100%;
@@ -2510,7 +2649,7 @@
 }
 .product_d_table table tbody tr td:first-child {
 	border-right: 1px solid #ddd;
-	width: 30%;
+	width: 40%;
 	font-weight: 700;
 }
 .product_d_table table tbody tr td {
@@ -2520,7 +2659,7 @@
 	border-top: 1px solid #ddd;
 }
 .product_d_tab_content {
-	padding: 20px 30px 10px;
+	padding: 20px 0;
 }
 .product_d_tab_content p {
 	font-size: 13px;
@@ -2579,7 +2718,7 @@
     background: #ea3a3c;
 }
 .samll_product_ratting ul li a.comment_form {
-	color: #555;
+	color: #999999;
 	font-weight: 500;
 }
 .product_d_tab_content_item strong, .product_d_tab_content_item p {
@@ -2603,7 +2742,7 @@
 	text-transform: uppercase;
 	font-size: 28px;
 	line-height: 1.5;
-	font-weight: 900;
+	font-weight: 500;
 	margin-bottom: 15px;
 }
 .product_reference p,.product_condition p {
@@ -4734,8 +4873,8 @@
 	text-align: right;
 }
 .view_img.view_video a {
-	width: 40px;
-	height: 40px;
+	width: 60px;
+    height: 60px;
 }
 
 .product_d_tab_button.simple_tab_button {

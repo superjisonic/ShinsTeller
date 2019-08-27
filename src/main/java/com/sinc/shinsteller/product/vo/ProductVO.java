@@ -1,8 +1,6 @@
 package com.sinc.shinsteller.product.vo;
 
-import java.io.Serializable;
-
-public class ProductVO implements Serializable{
+public class ProductVO {
 	// PRDNO, PRDNAME, PRDTITLE, PRICE
 		private int prdno;
 		private String prdname;
@@ -10,12 +8,15 @@ public class ProductVO implements Serializable{
 		private int price;
 		private String brand;
 		private String manufacturer;
+		private String category1;
+		private String category2;
 		
 		public ProductVO() {
 			super();
 		}
-		
-		public ProductVO(int prdno, String prdname, String prdtitle, int price, String brand, String manufacturer) {
+
+		public ProductVO(int prdno, String prdname, String prdtitle, int price, String brand, String manufacturer,
+				String category1, String category2) {
 			super();
 			this.prdno = prdno;
 			this.prdname = prdname;
@@ -23,7 +24,11 @@ public class ProductVO implements Serializable{
 			this.price = price;
 			this.brand = brand;
 			this.manufacturer = manufacturer;
+			this.category1 = category1;
+			this.category2 = category2;
 		}
+
+
 
 		public int getPrdno() {
 			return prdno;
@@ -62,8 +67,24 @@ public class ProductVO implements Serializable{
 			this.manufacturer = manufacturer;
 		}
 
+		public String getCategory1() {
+			return category1;
+		}
+
+		public void setCategory1(String category1) {
+			this.category1 = category1;
+		}
+
+		public String getCategory2() {
+			return category2;
+		}
+
+		public void setCategory2(String category2) {
+			this.category2 = category2;
+		}
+
 		@Override
 		public String toString() {
-			return "ProductVO[ prdno=" + prdno + ", prdname=" + prdname + ", prdtitle=" + prdtitle + ", price=" + price+ ", brand=" + brand + ", manufacturer=" + manufacturer + "]";
+			return "ProductVO[ prdno=" + prdno + ", prdname=" + prdname + ", prdtitle=" + prdtitle + ", price=" + price+ ", brand=" + brand + ", manufacturer=" + manufacturer + ", category1="+ category1 + ", category2=" + category2 + "]";
 		}
 }
