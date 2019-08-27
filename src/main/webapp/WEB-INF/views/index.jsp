@@ -24,7 +24,7 @@
     	<div class="fixed-top" data-toggle="affix">
 		    <div class="navbar navbar-expand-sm py-3 align-items-start" id="first">
 		        <a class="navbar-toggler p-2 text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
-		        <a href="#" class="navbar-brand ">
+		        <a href="#" class="navbar-brand" id="logo">
 		        	<img src="/resources/assets/img/logo/Shinsegae+Shopping+White.png" alt="ShinsTeller">
 		        </a>
 		        <div class="navbar-collapse collapse">
@@ -43,6 +43,17 @@
 					search
 				  </i>
 				</form>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+			        	<a class="nav-link" href="#">오싹한LIVE</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="#">싸군딜</a>
+			      	</li>
+			      	<li class="nav-item">
+			        	<a class="nav-link" href="#">베스트</a>
+			      	</li>
+			    </ul>
 			</div>
 		</div>
 		<section class="cd-slider">
@@ -89,7 +100,9 @@
     					<div class="row">
     				</c:if>
 					<div class="col-md-4 card" >
-					  <img src="/resources/images/${index.prdname}1.jpg" class="card-img-top" alt="...">
+						<a href="/product.sst?prdno=${index.prdno}">
+							<img src="/resources/images/${index.prdname}1.jpg" class="card-img-top" alt="...">	
+						</a>
 					  <div class="card-body">
 					    <h5 class="card-title">${ index.prdtitle }</h5>
 					    <p class="card-text">

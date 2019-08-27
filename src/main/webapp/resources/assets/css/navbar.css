@@ -15,6 +15,12 @@ html,body {
 	background: rgb(248,71,59);
 	background: linear-gradient(90deg, rgba(248,71,59,1) 0%, rgba(247,77,64,1) 62%, rgba(249,123,89,1) 100%);
 }
+.nav-item .nav-link {
+	color: white !important;
+	z-index:-1;
+	display:inline-block;
+	right:0;
+}
 
 .navbar-brand img {
   height: 40px;
@@ -34,9 +40,9 @@ html,body {
 
 /*Search Bar CSS*/
 form{
-    position: relative;
+    position: absolute;
     text-align:center;
-    
+    z-index:10;
     transition: all 1s;
     width: 36px;
     height: 36px;
