@@ -36,10 +36,10 @@
         </div>  --%>  
 		
         <nav class="navbar navbar-light fixed-top detail_top_bar">
-        <button type="button" class="prdBtn" onclick="javascript:history.back();"><img src="/resources/images/prdBackBtn.png" /></button>
+        <button type="button" class="prdBtn" onclick="javascript:history.back();"><img src="/resources/assets/img/product/prdBackBtn.png" /></button>
   		<div class="top_bar_name">상품상세</div><!-- 네비게이션 바의 콘텐츠 -->
-		<button type="button" class="prdBtn"><img src="/resources/images/prdSearchBtn.png" /></button>
-		<button type="button" class="prdBtn"><img src="/resources/images/prdCartBtn.png" /></button>
+		<button type="button" class="prdBtn"><img src="/resources/assets/img/product/prdSearchBtn.png" /></button>
+		<button type="button" class="prdBtn"><img src="/resources/assets/img/product/prdCartBtn.png" /></button>
 		</nav>
 		
 		<div class="product_category">
@@ -47,7 +47,7 @@
          </div>
          <div class="product_broadInfo">
          	<button type="button" class="broadBtn">
-         	<img src="/resources/images/bellBtn.png" />
+         	<img src="/resources/assets/img/product/bellBtn.png" />
          	방송알림신청
          	</button>
          </div>
@@ -60,27 +60,27 @@
                         <div class="banner_slider">
                             <div class="slider_active slider_a_four owl-carousel">
                                 <div class="single_slider single_sl_four">
-                                	<img class="prdimg" src="/resources/images/${ product.prdname }12.jpg" />
+                                	<img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
-                                	<img src="/resources/images/${ product.prdname }2.jpg" />
+                                	<img src="/resources/images/${ product.prdname}2.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }3.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }4.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/images/playbtn.png" /></a>
+                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                             <div class="small_product_price mb-15">
                                 <span class="new_price"> <fmt:formatNumber value="${ product.price }" pattern="#,###" /></span>원
                                 <span class="old_price"> <fmt:formatNumber value="${ product.price + 1000 }" pattern="#,###" /></span>원&nbsp;
-                                <img src="/resources/images/questionMark.png" />
+                                <img src="/resources/assets/img/product/questionMark.png" />
                             </div>
                         </div>
                     </div>
@@ -109,22 +109,22 @@
         <!--product details end-->
         
         <div class="share_choose_tap">
-        	<div class="share_tap"><img src="/resources/images/shareBtn.png" />공유하기</div>
+        	<div class="share_tap"><img src="/resources/assets/img/product/shareBtn.png" />공유하기</div>
         	<span class="seperate">|</span>
-        	<div class="choose_tap"><img src="/resources/images/chooseBtn.png" />찜하기</div>
+        	<div class="choose_tap"><img src="/resources/assets/img/product/chooseBtn.png" />찜하기</div>
         </div>
         
         <div class="bonus_service_tap">
         	<div class="card_shipping_tap" style="border-bottom: 1px solid #e5e5e5;">
-        	<img class="iconimg" src="/resources/images/cardIcon.png"/>무이자 할부 카드 확인
-        	<img class="detailimg" src="/resources/images/cardDetailBtn.png" />
+        	<img class="iconimg" src="/resources/assets/img/product/cardIcon.png"/>무이자 할부 카드 확인
+        	<img class="detailimg" src="/resources/assets/img/product/cardDetailBtn.png" />
         	</div>
         	<div class="card_shipping_tap">
-        	<img class="iconimg" src="/resources/images/ShippingIcon.png"/>무료배송/ 평균 배송일 3일
-        	<img class="detailimg" src="/resources/images/shippingDetail.png" />
+        	<img class="iconimg" src="/resources/assets/img/product/ShippingIcon.png"/>무료배송/ 평균 배송일 3일
+        	<img class="detailimg" src="/resources/assets/img/product/shippingDetail.png" />
         	</div>
-        	<img src="/resources/images/bonusService1.jpg" />
-        	<img src="/resources/images/bonusService2.jpg" />
+        	<img src="/resources/assets/img/product/bonusService1.jpg" />
+        	<img src="/resources/assets/img/product/bonusService2.jpg" />
         </div>
         <!--product details tab-->
         <div class="product_details_tab mb-40" style="display: inline-block;">
@@ -151,21 +151,22 @@
                             <div class="tab-content product_details_content">
                                 <div class="tab-pane fade show active" id="info" role="tabpanel" >
                                     <div class="product_d_tab_content">
-                                        <img src="/resources/images/${ product.prdname }Detail1.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail2.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail3.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail4.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail5.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail6.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail7.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail8.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail9.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail10.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail11.jpg"/>
-                                        <img src="/resources/images/${ product.prdname }Detail12.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail1.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail2.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail3.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail4.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail5.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail6.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail7.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail8.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail9.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail10.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail11.jpg"/>
+                                        <img src="/resources/assets/img/product/${ product.prdname }Detail12.jpg"/>
                                     </div>    
                                 </div>
                                 <div class="tab-pane fade" id="sheet" role="tabpanel">
+                                    <div class="product_d_tab_content">
                                     <div class="product_d_table">
                                         <table>
                                             <tbody>
@@ -184,7 +185,6 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="product_d_tab_content">
                                         <p>여기에 내용 추가할까?</p>
                                     </div> 
                                 </div>
