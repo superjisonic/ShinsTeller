@@ -43,7 +43,7 @@
 					search
 				  </i>
 				</form>
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 					<li class="nav-item">
 			        	<a class="nav-link" href="#">오싹한LIVE</a>
 			      	</li>
