@@ -117,19 +117,18 @@
     					</div>
     				</c:if>
 				</c:forEach>
-				<div class="row">
-					
+				<div class="sticker">
+					<a class="circle"></a>
 				</div>
-				
-				
 			</div>
 			
-				<div class='box'>
-				  <div class='wave -one'></div>
-				  <div class='wave -two'></div>
-				  <div class='wave -three'></div>
-				  <div class='title'>Voice Recognition</div>
-				</div>
+			
+			<div class='box'>
+				<div class='wave -one'></div>
+				<div class='wave -two'></div>
+				<div class='wave -three'></div>
+				<div class='title'>Voice Recognition</div>
+			</div>
     	</section>
     	
 		
