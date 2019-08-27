@@ -1,8 +1,6 @@
 package com.sinc.shinsteller.product.vo;
 
-import java.io.Serializable;
-
-public class ProductVO implements Serializable{
+public class ProductVO {
 	// PRDNO, PRDNAME, PRDTITLE, PRICE
 		private int prdno;
 		private String prdname;
