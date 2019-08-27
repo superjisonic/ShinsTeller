@@ -21,12 +21,14 @@ html,body {
 	display:inline-block;
 	right:0;
 }
-
+.toggler{
+	float:right;
+	padding-top:12px;
+}
 .navbar-brand img {
   height: 40px;
   /* put value of image height as your need */
   /* float: left; */
-  margin-right: 7px;
 }
 .affix #first {
   display:none;
@@ -84,7 +86,7 @@ input{
 }
 
 form:hover{
-    width: 80rem;
+    width: 50%;
     cursor: pointer;
 }
 
