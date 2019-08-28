@@ -33,7 +33,7 @@
 		        </div>
 		        <div class="navbar-collapse collapse ml-auto">
 		            <ul class="nav navbar-nav">
-		                <li class="nav-item"><a href="#" class="nav-link">소개</a>
+		                <li class="nav-item "><a href="#" class="nav-link">소개</a>
 		                </li>
 		                <li class="nav-item"><a href="#" class="nav-link">바로가기</a>
 		                </li>
