@@ -53,16 +53,15 @@
          </div>
         <!--product details start-->
                 <!--baner slide show-->
-        <img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
+        
         <div class="banner_slide_show slide_show_two mb-40">
             <div class="container">
                 <div class="row">
                     <div class="col-12 product_body">
                         <div class="banner_slider">
                             <div class="slider_active slider_a_four owl-carousel">
-                            
                                 <div class="single_slider single_sl_four">
-                                	<!-- 원래 여기에 있었는데 이미지가 안뜸. CSS 문제인듯함.  -->
+                                	<img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
                                 	<div class="view_img view_video">
                                             <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
@@ -91,6 +90,7 @@
                 </div>
             </div>
         </div>
+        
         <!--baner slide end-->
         <div class="product_details">
             <div class="container">
@@ -959,7 +959,9 @@
                     </div>
                 </div>
             </div> 
-            
+            <div class="sticker">
+				<a class="circle"></a>
+			</div>
     
           <!-- modal area end --> 
 		
@@ -969,6 +971,6 @@
         <script src="/resources/assets/js/popper.js"></script>
         <script src="/resources/assets/js/bootstrap.min.js"></script>
         <script src="/resources/assets/js/plugins.js"></script>
-        <script src="/resources/assets/js/main.js"></script>
+        <script src="/resources/assets/js/product.js"></script>
     </body>
 </html>
