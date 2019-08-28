@@ -10,13 +10,14 @@ public class ProductVO {
 		private String manufacturer;
 		private String category1;
 		private String category2;
+		private String vod_name;
 		
 		public ProductVO() {
 			super();
 		}
 
 		public ProductVO(int prdno, String prdname, String prdtitle, int price, String brand, String manufacturer,
-				String category1, String category2) {
+				String category1, String category2, String vod_name) {
 			super();
 			this.prdno = prdno;
 			this.prdname = prdname;
@@ -83,8 +84,16 @@ public class ProductVO {
 			this.category2 = category2;
 		}
 
+		public String getVod_name() {
+			return vod_name;
+		}
+
+		public void setVod_name(String vod_name) {
+			this.vod_name = vod_name;
+		}
+
 		@Override
 		public String toString() {
-			return "ProductVO[ prdno=" + prdno + ", prdname=" + prdname + ", prdtitle=" + prdtitle + ", price=" + price+ ", brand=" + brand + ", manufacturer=" + manufacturer + ", category1="+ category1 + ", category2=" + category2 + "]";
+			return "ProductVO[ prdno=" + prdno + ", prdname=" + prdname + ", prdtitle=" + prdtitle + ", price=" + price+ ", brand=" + brand + ", manufacturer=" + manufacturer + ", category1="+ category1 + ", category2=" + category2 + ", vod_name=" + vod_name + "]";
 		}
 }
