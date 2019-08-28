@@ -59,6 +59,9 @@
     right: 12px;
     z-index:10000000;
 }
+.sticker:hover{
+	transform: translateY(-7px);
+}
 a.circle {
   width: 10vmin;
   height: 10vmin;
