@@ -12,13 +12,22 @@ html,body {
   transition:padding 0.2s ease;  
 }
 .navbar {
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 	background: rgb(248,71,59);
 	background: linear-gradient(90deg, rgba(248,71,59,1) 0%, rgba(247,77,64,1) 62%, rgba(249,123,89,1) 100%);
 }
+/* #second {
+	box-shadow: 0px 10px rgba(0, 0, 0, 0.1);
+	background: #fff;
+
+} */
 .nav-item .nav-link {
 	color: white !important;
 	z-index:-1;
 	display:inline-block;
+	right:0;
+}
+.navbar-collapse{
 	right:0;
 }
 .toggler{

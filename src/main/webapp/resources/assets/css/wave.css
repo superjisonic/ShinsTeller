@@ -9,7 +9,7 @@
   background: lighten(#f0f4c3, 10%);
   position: relative;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0S, 0);
 }
 
 .wave {

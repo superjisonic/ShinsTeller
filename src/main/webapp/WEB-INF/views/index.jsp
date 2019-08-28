@@ -22,20 +22,20 @@
     <body>
 		
     	<div class="fixed-top" data-toggle="affix">
-		    <div class="navbar navbar-expand-sm py-3 align-items-start" id="first">
+		    <div class="navbar navbar-expand-sm" id="first">
 		        <div class="navbar-brand">
 		        	<a href="#">
 			        	<img src="/resources/assets/img/logo/logo_white.png" alt="ShinsTeller">
 			        </a>
 		        </div>
 		        <div class="toggler">
-		        	<a class="navbar-toggler p-2 text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
+		        	<a class="navbar-toggler text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
 		        </div>
 		        <div class="navbar-collapse collapse ml-auto">
 		            <ul class="nav navbar-nav">
-		                <li class="nav-item"><a href="#" class="nav-link">App</a>
+		                <li class="nav-item"><a href="#" class="nav-link">소개</a>
 		                </li>
-		                <li class="nav-item"><a href="#" class="nav-link">Pricing</a>
+		                <li class="nav-item"><a href="#" class="nav-link">바로가기</a>
 		                </li>
 		            </ul>
 		        </div>
@@ -104,29 +104,35 @@
 							<img src="/resources/images/${index.prdname}1.jpg" class="card-img-top" alt="...">	
 						</a>
 					  <div class="card-body">
+					  	<span style="color: #ea3a3c; padding-right: 10px;">[TV쇼핑]</span>
 					    <h5 class="card-title">${ index.prdtitle }</h5>
-					    <a href="#" class="btn round-btn ">
-					    	<i class="material-icons heart-btn">favorite</i>
-					    </a>
-					    <p class="card-text" id="price">
-							${ index.price } 원</p>
+					    <div class="btn-line">
+					    	<a href="#" class="btn round-btn">
+						    	<i class="material-icons heart-btn">favorite</i>
+						    </a>
+						    <a href="#" class="btn round-btn cart">
+						    	<i class="material-icons cart-btn">shopping_cart</i>
+						    </a>	
+					    </div>
+					    <span class="card-text" id="price">
+							${ index.price } </span>원
 					  </div>
 					</div>
 					<c:if test="${ 2 eq counter%3 }">
     					</div>
     				</c:if>
 				</c:forEach>
-				<div class="sticker">
-					<a class="circle"></a>
-				</div>
+				
 			</div>
 			
-			
+			<div class="sticker">
+				<a class="circle"></a>
+			</div>
 			<div class='box'>
 				<div class='wave -one'></div>
 				<div class='wave -two'></div>
 				<div class='wave -three'></div>
-				<div class='title'>Voice Recognition</div>
+				<div class='title'>ShinsTeller</div>
 			</div>
     	</section>
     	

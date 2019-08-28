@@ -83,10 +83,13 @@ a {
 /*animated sticker*/
 .sticker{
 	display:grid;
+	position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
 }
 a.circle {
-  width: 50vmin;
-  height: 50vmin;
+  width: 10vmin;
+  height: 10vmin;
   transform-style: preserve-3d;
   position: relative;
   animation: h 1s both;
@@ -101,7 +104,7 @@ a.circle:after {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: center / cover url(https://images.unsplash.com/photo-1486736065690-45e0655d038a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80);
+  background: center / cover url(/resources/assets/img/logo/btn_shintisho.png);
 }
 a.circle:before {
   animation: f 4s both;
@@ -133,10 +136,10 @@ a.circle:after {
 }
 @keyframes h {
   from {
-    transform: rotate(-50deg);
+    transform: rotate(-10deg);
   }
   to {
-    transform: rotate(-40deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -147,6 +150,7 @@ a.circle:after {
 }
 .round-btn{
 	float:right;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 	background-color:#ea3a3c;
 	width: 40px;
     height: 40px;
@@ -154,14 +158,29 @@ a.circle:after {
     padding: 5px;
     text-align: center;
     line-height: 40px;
+    margin-left:5px
+}
+.cart{
+	background-color:#fff;
+}
+.cart-btn{
+	color: #ea3a3c;
 }
 .heart-btn{
-	color:white;
+	color: #fff;
 }
 .btn:hover {
 	background-color: transparent;
+	transform: translateY(-7px);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
 .btn:hover .heart-btn {
 	color: #ea3a3c;
+}
+.cart:hover {
+	background-color: #ea3a3c;
+}
+.btn:hover .cart-btn {
+	color: #fff;
 }
 
