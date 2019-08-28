@@ -7,7 +7,7 @@
 	<typeAliases>
 		<typeAlias type="com.sinc.shinsteller.index.vo.IndexVO" alias="index"/>
 		<typeAlias type="com.sinc.shinsteller.product.vo.ProductVO" alias="product"/>
-		<typeAlias type="com.sinc.shinsteller.video.vo.VideoVO" alias="video"/>
+		<typeAlias type="com.sinc.shinsteller.video.dto.VideoDTO" alias="vidoeDTO" />
 	</typeAliases>
 	
 </configuration>

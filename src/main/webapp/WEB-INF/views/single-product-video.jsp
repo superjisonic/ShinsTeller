@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Lionshop - Product Details</title>
+        <title>상품 상세(${ product.prdname })</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -33,6 +33,7 @@
     	제조사/원산지 : ${ product.manufacturer }<br>
     	대분류 : ${ product.category1 }<br>
     	소분류 : ${ product.category2 }<br>
+    	vod명 : ${ product.vod_name }
         </div>  --%>  
 		
         <nav class="navbar navbar-light fixed-top detail_top_bar">
@@ -63,7 +64,7 @@
                                 <div class="single_slider single_sl_four">
                                 	<img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
+                                            <a class="view_large_video" href="/video.sst?videoName=${ product.vod_name }"><img src="/resources/assets/img/product/playbtn.png" /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">

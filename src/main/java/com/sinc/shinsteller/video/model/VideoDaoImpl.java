@@ -8,15 +8,18 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.sinc.shinsteller.video.dto.VideoDTO;
+
 @Repository("videoD")
 public class VideoDaoImpl implements VideoDao{
 
 	@Resource(name="sqlSession")
 	private SqlSession session;
-	
-//	@Override
-//	public List<BoardVO> selectAll() {
-//		return session.selectList("com.sinc.board.all");
-//	}
+
+	@Override
+	public List<VideoDTO> getVodResultList() {
+		System.out.println("VideoDaoImpl >>>>> getVodResultList");
+		return session.selectList("com.sinc.shinsteller.video.selectVODResult");
+	}
 	
 }
