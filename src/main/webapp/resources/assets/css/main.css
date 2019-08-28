@@ -85,7 +85,9 @@ a {
 	display:grid;
 	position: fixed;
     bottom: 1.5rem;
-    right: 1.5rem;
+    right: 1rem;
+    transform: translateY(-7px);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
 a.circle {
   width: 10vmin;
