@@ -1,9 +1,11 @@
 package com.sinc.shinsteller.video.model;
 
 import java.util.List;
-import java.util.Map;
+
+import com.sinc.shinsteller.video.dto.VideoDTO;
 
 public interface VideoDao {
-	//public List<BoardVO> selectAll();
+
+	List<VideoDTO> getVodResultList();
 	
 }

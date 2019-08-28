@@ -4,13 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.sinc.shinsteller.video">
-<!-- 
-	<select id="all" resultType="board" >
-		SELECT	SEQ, TITLE, CONTENT, WRITER, TO_CHAR(REGDATE, 'RRRR-MM-DD') AS REGDATE, VIEWCNT
-		FROM	SPRING_BOARD_TBL
-		ORDER BY 1 DESC
+	<select id="selectVODResult"
+			resultType="vidoeDTO">
+		SELECT CTG_NAME, NVL(MAP_WORD, '') AS MAP_WORD, RES_TIMESTMP
+		FROM SST_VODRESULT V
+		LEFT JOIN SST_DICTIONARY D  ON (V.RES_DICID = D.DIC_ID)
+		LEFT JOIN SST_MAPPING M ON (V.RES_MAPID = M.MAP_ID)
+		LEFT JOIN SST_CATEGORY C ON (V.RES_CTGID = C.CTG_ID)
+	 	WHERE	CTG_INIT = 'y'
+	 	ORDER BY	V.RES_CTGID, V.RES_MAPID, V.RES_DICID, V.RES_TIMESTMP
 	</select>
-	 -->
 </mapper>  
 
 

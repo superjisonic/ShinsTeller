@@ -1,5 +1,5 @@
-section {
-    min-height:calc(100% - 90px);
+section{
+    min-height:calc(100%-90px);
 }
 
 
@@ -17,154 +17,142 @@ a {
   color: rgba(225, 255, 255, .8);
 }
 /* Slider style */
-.cd-slider {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	overflow: hidden;
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
-.cd-slider.ie9 nav div span {
-	display: none;
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
-.cd-slider ul li {
-	color: white;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	visibility: hidden;
-	transition: visibility 0s .6s;
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
-.cd-slider ul li::before {
-	content: '';
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	border-radius: 100%;
-	width: 135vh;
-	height: 135vh;
-	border: solid rgba(0,0,0,0.2);
-	border-width: 0;
-	transform: translate(-50%, -50%);
-	pointer-events: none;
-	transition: border-width .4s .6s;
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 5px;
+  width: 5px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
-.content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-position: 50% 100%;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	mix-blend-mode: lighten;
-	opacity: 0;
-	transform: scale(1.2);
-	transition: opacity .4s .6s, transform .4s .6s;
+
+.active {
+  background-color: #717171;
 }
-.content blockquote {
-	position: absolute;
-	bottom: 5%;
-	left: 4%;
-	z-index: 2;
-	max-width: 45%;
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
 }
-blockquote p {
-	font-size: 2rem;
-	margin-bottom: 2rem;
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-blockquote span {
-	font-size: 1rem;
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
-/* current slide
----------------------------------*/
-.cd-slider li.current_slide {
-	visibility: visible;
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
 }
-.cd-slider li.current_slide::before {
-	border-width: 16rem;
+/*animated sticker*/
+.sticker{
+	display:grid;
+	position: fixed;
+    bottom: 1.5rem;
+    right: 1rem;
+    transform: translateY(-7px);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
-.cd-slider li.current_slide .content {
-	opacity: 1;
-	transform: scale(1);
+a.circle {
+  width: 10vmin;
+  height: 10vmin;
+  transform-style: preserve-3d;
+  position: relative;
+  animation: h 1s both;
+  transform-origin: center bottom;
 }
-/* nav
----------------------------------*/
-nav div {
-	position: absolute;
-	top: 50%;
-	left: 4%;
-	width: 2.5rem;
-	height: 2.5rem;
-	margin-top: -2.5rem;
-	list-style: none;
+
+a.circle:before,
+a.circle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: center / cover url(/resources/assets/img/logo/btn_shintisho.png);
 }
-nav div:last-of-type {
-	left: auto;
-	right: 4%;
+a.circle:before {
+  animation: f 4s both;
 }
-.prev, .next {
-	position: relative;
-	z-index: 100;
-	width: 100%;
-	height: 100%;
-	display: block;
-	border-radius: 100%;
-	transition: box-shadow .3s;
+@keyframes f {
+  from {
+    clip-path: inset(0 80% 0 0);
+  }
+  50%,
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
 }
-.prev::before, .prev::after, .next::before, .next::after {
-	content: '';
-	position: absolute;
-	left: 43%;
-	background: #fff;
-	width: .4rem;
-	min-width: 3px;
-	border-radius: 3px;
-	height: 34%;
+a.circle:after {
+  filter: brightness(0.2);
+  transform: rotateY(-180deg);
+  animation: g 4s both;
 }
-.prev::before {
-	transform: rotate(45deg);
-	top: 24%;
+@keyframes g {
+  from {
+    clip-path: inset(0 0 0 20%);
+    transform-origin: 20% 0;
+  }
+  50%,
+  to {
+    clip-path: inset(0 0 0 100%);
+    transform-origin: 100% 0;
+  }
 }
-.prev::after {
-	transform: rotate(-45deg);
-	bottom: 24%;
-}
-.next::before, .next::after {
-	left: auto;
-	right: 43%;
-}
-.next::before {
-	transform: rotate(-45deg);
-	top: 24%;
-}
-.next::after {
-	transform: rotate(45deg);
-	bottom: 24%;
-}
-.prev:hover, .next:hover {
-	box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.15);
-}
-nav > div > span {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border-radius: 100%;
-	z-index: 5;
-	pointer-events: none;
-	will-change: width, height;
-	transform: translate(-50%, -50%);
-	transition: width .6s, height .6s;
+@keyframes h {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 
 /*card sections CSS*/
+#price{
+	font-weight:bolder;
+}
 .round-btn{
 	float:right;
+	box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 	background-color:#ea3a3c;
 	width: 40px;
     height: 40px;
@@ -172,13 +160,29 @@ nav > div > span {
     padding: 5px;
     text-align: center;
     line-height: 40px;
+    margin-left:5px
+}
+.cart{
+	background-color:#fff;
+}
+.cart-btn{
+	color: #ea3a3c;
 }
 .heart-btn{
-	color:white;
+	color: #fff;
 }
 .btn:hover {
 	background-color: transparent;
+	transform: translateY(-7px);
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
 }
 .btn:hover .heart-btn {
 	color: #ea3a3c;
 }
+.cart:hover {
+	background-color: #ea3a3c;
+}
+.btn:hover .cart-btn {
+	color: #fff;
+}
+

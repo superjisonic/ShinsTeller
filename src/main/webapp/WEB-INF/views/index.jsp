@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -21,17 +22,20 @@
     <body>
 		
     	<div class="fixed-top" data-toggle="affix">
-		    <div class="navbar navbar-expand-sm py-3 align-items-start" id="first">
-		        <a class="navbar-toggler p-2 text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
-		        <a href="#" class="navbar-brand" id="logo">
-		        	<img src="/resources/assets/img/logo/Shinsegae+Shopping+White.png" alt="ShinsTeller">
-		        </a>
-
-		        <div class="navbar-collapse collapse">
+		    <div class="navbar navbar-expand-sm" id="first">
+		        <div class="navbar-brand">
+		        	<a href="#">
+			        	<img src="/resources/assets/img/logo/logo_white.png" alt="ShinsTeller">
+			        </a>
+		        </div>
+		        <div class="toggler">
+		        	<a class="navbar-toggler text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
+		        </div>
+		        <div class="navbar-collapse collapse ml-auto">
 		            <ul class="nav navbar-nav">
-		                <li class="nav-item"><a href="#" class="nav-link">App</a>
+		                <li class="nav-item"><a href="#" class="nav-link">소개</a>
 		                </li>
-		                <li class="nav-item"><a href="#" class="nav-link">Pricing</a>
+		                <li class="nav-item"><a href="#" class="nav-link">바로가기</a>
 		                </li>
 		            </ul>
 		        </div>
@@ -43,8 +47,10 @@
 					search
 				  </i>
 				</form>
-
-				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+			        	<a class="nav-link" href="#">신스텔러 소개</a>
+			      	</li>
 					<li class="nav-item">
 			        	<a class="nav-link" href="#">오싹한LIVE</a>
 			      	</li>
@@ -57,39 +63,34 @@
 			    </ul>
 			</div>
 		</div>
-		<section class="cd-slider">
-		  <ul>
-		    <li data-color="#FF384B">
-		      <div class="content" style="background-image:url(https://i.imgur.com/i7VlkGV.png?2)">
-		        <blockquote>
-		          <p>I got my red dress on tonight dancing in the dark in the pale moonlight.</p>
-		          <span>Summertime Sadness - Lana Del Rey</span>
-		        </blockquote>
-		      </div>
-		    </li>
-		    <li data-color="#FF9C00">
-		      <div class="content" style="background-image:url(https://i.imgur.com/i7VlkGV.png?2)">
-		        <blockquote>
-		          <p>Will you still love me When I'm no longer young and beautiful Will you still love me</p>
-		          <span>Young And Beautiful - Lana Del Rey</span>
-		        </blockquote>
-		      </div>
-		    </li>
-		    <li data-color="#002AFF">
-		      <div class="content" style="background-image:url(https://i.imgur.com/i7VlkGV.png?2)">
-		        <blockquote>
-		          <p>Blue jeans White shirt Walked into the room You know you made my eyes burn</p>
-		          <span>Blue Jeans - Lana Del Rey</span>
-		        </blockquote>
-		      </div>
-		    </li>
-		  </ul>
-		  <nav>
-		    <div><a class="prev" href="#"></a></div>
-		    <div><a class="next" href="#"></a></div>
-		  </nav>
-		</section>
+		<!-- 슬라이드파트 -->
+		
 
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 3</div>
+			  <img src="/resources/assets/img/banner_01.png" style="width:100%">
+			  <!-- <div class="text">Caption Text</div> -->
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 3</div>
+			  <img src="/resources/assets/img/banner_02.png" style="width:100%">
+			  <!-- <div class="text">Caption Two</div> -->
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 3</div>
+			  <img src="/resources/assets/img/banner_03.png" style="width:100%">
+			  <!-- <div class="text">Caption Three</div> -->
+			</div>
+		</div>
+			<div style="text-align:center">
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			  <span class="dot"></span> 
+			</div>
+		
     	<section>
     		<div class="container">
     			<c:forEach items="${ products }" var="index" varStatus="status">
@@ -103,32 +104,38 @@
 							<img src="/resources/images/${index.prdname}1.jpg" class="card-img-top" alt="...">	
 						</a>
 					  <div class="card-body">
+					  	<span style="color: #ea3a3c; padding-right: 10px;">[TV쇼핑]</span>
 					    <h5 class="card-title">${ index.prdtitle }</h5>
-					    <p class="card-text">
-							${ index.price } 원
-					    </p>
-					    <a href="#" class="btn round-btn ">
-					    	<i class="material-icons heart-btn">favorite</i>
-					    </a>
+					    <div class="btn-line">
+					    	<a href="#" class="btn round-btn">
+						    	<i class="material-icons heart-btn">favorite</i>
+						    </a>
+						    <a href="#" class="btn round-btn cart">
+						    	<i class="material-icons cart-btn">shopping_cart</i>
+						    </a>	
+					    </div>
+					    <span class="card-text" id="price">
+							${ index.price } </span>원
 					  </div>
 					</div>
 					<c:if test="${ 2 eq counter%3 }">
     					</div>
     				</c:if>
 				</c:forEach>
-				<div class="row">
-					
-				</div>
 				
 			</div>
 			
-				<div class='box'>
-				  <div class='wave -one'></div>
-				  <div class='wave -two'></div>
-				  <div class='wave -three'></div>
-				  <div class='title'>Voice Recognition</div>
-				</div>
+			<div class="sticker">
+				<a class="circle"></a>
+			</div>
+			<div class='box'>
+				<div class='wave -one'></div>
+				<div class='wave -two'></div>
+				<div class='wave -three'></div>
+				<div class='title'>ShinsTeller</div>
+			</div>
     	</section>
+    	
     	
 		
 		
