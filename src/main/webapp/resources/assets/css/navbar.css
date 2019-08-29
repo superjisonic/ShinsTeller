@@ -38,6 +38,10 @@ html,body {
 	float:right;
 	padding-top:12px;
 }
+.navbar-toggler{
+	color: white!important;
+}
+
 .navbar-brand img {
   height: 40px;
   /* put value of image height as your need */

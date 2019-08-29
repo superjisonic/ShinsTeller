@@ -28,8 +28,10 @@
 			        	<img src="/resources/assets/img/logo/logo_white.png" alt="ShinsTeller">
 			        </a>
 		        </div>
-		        <div class="toggler">
-		        	<a class="navbar-toggler text-white border-0" data-toggle="collapse" data-target=".navbar-collapse">☰</a>
+		        <div class="toggler text-white">
+		        	<a class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		        		<i class="material-icons">menu</i>
+		        	</a>
 		        </div>
 		        <div class="navbar-collapse collapse ml-auto">
 		            <ul class="nav navbar-nav">
