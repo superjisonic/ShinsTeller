@@ -187,7 +187,7 @@
       });
 
       markerDiv.on('mouseout', function () {
-        !!markerTip && markerTip.css("visibility", "hidden");
+        !!markerTip && markerTip.css("visibility", "visible");
       });
     }
 
