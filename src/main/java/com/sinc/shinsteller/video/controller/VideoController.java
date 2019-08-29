@@ -22,10 +22,9 @@ public class VideoController {
 	private VideoService serviceImpl;
 	
 	@RequestMapping(value = "/video.sst")
-	public ModelAndView goVideo(String videoName) {
+	public ModelAndView goVideo() {
 		System.out.println("VideoController >>>>> goVideo");
-		ModelAndView mv = new ModelAndView("video");
-		mv.addObject("videoName", videoName);
+		ModelAndView mv = new ModelAndView("videoTest");
 		return mv;
 	 }
 	
