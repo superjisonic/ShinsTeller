@@ -1,9 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
-<html>
+<html class="no-js" lang="zxx">
  <head>
  <meta charset="utf-8">
+ <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Video with markers</title>
-
+	<meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="http://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
    <link href="/resources/assets/to/videojs.markers.css" rel="stylesheet">
 
@@ -29,17 +34,19 @@
 <script src="/resources/assets/to/videojs-markers.js"></script>
  <script> 
  var player = videojs('demo', {nativeControlsForTouch: false} );
- arr = [];
- timeAry = [45.4,879.7,912]
+var arr = [];
+var timeAry = [45.4,879.7,1800];
  for(var i in timeAry){
-	 arr.push({
-		 "time": timeAry[i]
-		 });
+ 	 arr.push({
+ 		 	time: timeAry[i]
+ 		 });
  }
  console.log(arr);
+ 
+ 
   player.markers({
      markers: arr
-    	 /*  [
+/*     	   [
         {
            time: 40,
            text: "put"
@@ -56,9 +63,8 @@
            time: 500,
            text: "Jiseon"
         }
-     ] */
+     ]  */
   });
-
  
   
  </script>
