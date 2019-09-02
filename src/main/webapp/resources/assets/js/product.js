@@ -507,7 +507,7 @@
         enabled:true,
       }
     });
-    $('.view_large_video').magnificPopup({
+   /* $('.view_large_video').magnificPopup({
       type: 'iframe',
       mainClass: 'mfp-fade',
       removalDelay: 160,
@@ -515,7 +515,7 @@
       zoom: {
           enabled: true,
       }
-    });
+    });*/
 
 
     $('.portfolio_gallery').imagesLoaded( function() {

@@ -20,6 +20,7 @@ function showSlides() {
 }
 
 
+//Scroll to top
 var link = document.getElementById("scrollUp");
 var amountScrolled = 250;
 
@@ -31,7 +32,7 @@ window.addEventListener('scroll', function(e) {
     }
 });
 
-<!-- Scrolls to Top -->
+
 link.addEventListener('click', function(e) {
     e.preventDefault();
 
@@ -43,6 +44,5 @@ link.addEventListener('click', function(e) {
             clearInterval(runAnimation);
         }
     };
-    // Loop the animation function
     var runAnimation = setInterval(animateScroll, 16);
 });

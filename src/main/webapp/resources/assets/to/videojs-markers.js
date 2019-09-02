@@ -6,7 +6,7 @@
   // default setting
   var defaultSetting = {
     markerStyle: {
-      'width': '7px',
+      'width': '20px',
       'border-radius': '30%',
       'background-color': 'red'
     },
@@ -20,18 +20,18 @@
       }
     },
     breakOverlay: {
-      display: false,
-      displayTime: 3,
-      text: function text(marker) {
-        return "Break overlay: " + marker.overlayText;
-      },
-      style: {
-        'width': '100%',
-        'height': '20%',
-        'background-color': 'rgba(0,0,0,0.7)',
-        'color': 'white',
-        'font-size': '17px'
-      }
+//      display: false,
+//      displayTime: 3,
+//      text: function text(marker) {
+//        return "Break overlay: " + marker.overlayText;
+//      },
+//      style: {
+//        'width': '100%',
+//        'height': '20%',
+//        'background-color': 'rgba(0,0,0,0.7)',
+//        'color': 'white',
+//        'font-size': '17px'
+//      }
     },
     onMarkerClick: function onMarkerClick(marker) {},
     onMarkerReached: function onMarkerReached(marker, index) {},
@@ -109,6 +109,7 @@
       // bind click event to seek to marker time
       markerDiv.on('click', function (e) {
         var preventDefault = false;
+        
         if (typeof setting.onMarkerClick === "function") {
           // if return false, prevent default behavior
           preventDefault = setting.onMarkerClick(marker) === false;

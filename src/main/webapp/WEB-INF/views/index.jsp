@@ -135,14 +135,14 @@
 			<div class="sticker">
 				<a class="circle"></a>
 			</div>
+			
+    	</section>
 			<div class='box'>
 				<div class='wave -one'></div>
 				<div class='wave -two'></div>
 				<div class='wave -three'></div>
 				<div class='title'>ShinsTeller</div>
 			</div>
-			
-    	</section>
     	
     	
 		
