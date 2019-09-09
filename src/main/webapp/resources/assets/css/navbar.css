@@ -16,10 +16,6 @@ html,body {
 	background: rgb(248,71,59);
 	background: linear-gradient(90deg, rgba(248,71,59,1) 0%, rgba(247,77,64,1) 62%, rgba(249,123,89,1) 100%);
 }
-/* ul.nav.navbar-nav {
-	text-align:right;
-	margin-right:1rem;
-} */
 /* #second {
 	box-shadow: 0px 10px rgba(0, 0, 0, 0.1);
 	background: #fff;
@@ -38,10 +34,6 @@ html,body {
 	float:right;
 	padding-top:12px;
 }
-.navbar-toggler{
-	color: white!important;
-}
-
 .navbar-brand img {
   height: 40px;
   /* put value of image height as your need */
@@ -103,7 +95,7 @@ input{
 }
 
 form:hover{
-    width: 95%;
+    width: 50%;
     cursor: pointer;
 }
 

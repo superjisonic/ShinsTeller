@@ -6,32 +6,32 @@
   // default setting
   var defaultSetting = {
     markerStyle: {
-      'width': '7px',
+      'width': '20px',
       'border-radius': '30%',
       'background-color': 'red'
     },
     markerTip: {
       display: true,
       text: function text(marker) {
-        return "Break: " + marker.text;
+        return "";
       },
       time: function time(marker) {
         return marker.time;
       }
     },
     breakOverlay: {
-      display: false,
-      displayTime: 3,
-      text: function text(marker) {
-        return "Break overlay: " + marker.overlayText;
-      },
-      style: {
-        'width': '100%',
-        'height': '20%',
-        'background-color': 'rgba(0,0,0,0.7)',
-        'color': 'white',
-        'font-size': '17px'
-      }
+//      display: false,
+//      displayTime: 3,
+//      text: function text(marker) {
+//        return "Break overlay: " + marker.overlayText;
+//      },
+//      style: {
+//        'width': '100%',
+//        'height': '20%',
+//        'background-color': 'rgba(0,0,0,0.7)',
+//        'color': 'white',
+//        'font-size': '17px'
+//      }
     },
     onMarkerClick: function onMarkerClick(marker) {},
     onMarkerReached: function onMarkerReached(marker, index) {},
@@ -78,11 +78,13 @@
       newMarkers.forEach(function (marker) {
         marker.key = generateUUID();
 
-        videoWrapper.find('.vjs-progress-holder').append(createMarkerDiv(marker));
-
-        // store marker in an internal hash map
+     // store marker in an internal hash map
         markersMap[marker.key] = marker;
         markersList.push(marker);
+        
+        videoWrapper.find('.vjs-progress-holder').append(createMarkerDiv(marker));
+
+        
       });
 
       sortMarkersList();
@@ -107,6 +109,7 @@
       // bind click event to seek to marker time
       markerDiv.on('click', function (e) {
         var preventDefault = false;
+        
         if (typeof setting.onMarkerClick === "function") {
           // if return false, prevent default behavior
           preventDefault = setting.onMarkerClick(marker) === false;
@@ -118,9 +121,9 @@
         }
       });
 
-      if (setting.markerTip.display) {
+      //if (setting.markerTip.display) {
         registerMarkerTipHandler(markerDiv);
-      }
+     // }
 
       return markerDiv;
     }
@@ -171,24 +174,27 @@
 
     // attach hover event handler
     function registerMarkerTipHandler(markerDiv) {
-      markerDiv.on('mouseover', function () {
-        var marker = markersMap[$(markerDiv).data('marker-key')];
-
+    	var marker = markersMap[$(markerDiv).data('marker-key')];
+    	//alert(marker);
+    	markerTip.find('.vjs-tip-inner').text(setting.markerTip.text(marker));
+        
+        // margin-left needs to minus the padding length to align correctly with the marker
+        markerTip.css({
+          "left": getPosition(marker) + '%',
+          "margin-left": -parseFloat(markerTip.width()) / 2 - 40 + 'px',
+          "visibility": "visible"
+        });
+        initializeMarkerTip();
         if (!!markerTip) {
-          markerTip.find('.vjs-tip-inner').text(setting.markerTip.text(marker));
-
-          // margin-left needs to minus the padding length to align correctly with the marker
-          markerTip.css({
-            "left": getPosition(marker) + '%',
-            "margin-left": -parseFloat(markerTip.width()) / 2 - 5 + 'px',
-            "visibility": "visible"
-          });
+          
         }
+      /*markerDiv.on('mouseover', function () {
+    	  
       });
 
       markerDiv.on('mouseout', function () {
         !!markerTip && markerTip.css("visibility", "visible");
-      });
+      });*/
     }
 
     function initializeMarkerTip() {

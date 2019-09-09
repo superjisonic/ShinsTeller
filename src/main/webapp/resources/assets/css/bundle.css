@@ -315,7 +315,7 @@ textarea:focus {
 *************************/
 #scrollUp {
 	background: #ea3a3c none repeat scroll 0 0;
-	bottom: 85px;
+	bottom: 12%;
 	color: #ffffff;
 	cursor: pointer;
 	display: none;

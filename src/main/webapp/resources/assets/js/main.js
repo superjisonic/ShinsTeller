@@ -18,3 +18,31 @@ function showSlides() {
   setTimeout(showSlides, 3000);
    // Change image every 2 seconds
 }
+
+
+//Scroll to top
+var link = document.getElementById("scrollUp");
+var amountScrolled = 250;
+
+window.addEventListener('scroll', function(e) {
+    if ( window.pageYOffset > amountScrolled ) {
+        link.classList.add('show');
+    } else {
+        link.className = 'scrollUp';
+    }
+});
+
+
+link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    var distance = 0 - window.pageYOffset;
+    var increments = distance/(500/16);
+    function animateScroll() {
+        window.scrollBy(0, increments);
+        if (window.pageYOffset <= document.body.offsetTop) {
+            clearInterval(runAnimation);
+        }
+    };
+    var runAnimation = setInterval(animateScroll, 16);
+});

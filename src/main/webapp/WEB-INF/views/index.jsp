@@ -109,10 +109,10 @@
 					  	<span style="color: #ea3a3c; padding-right: 10px;">[TV쇼핑]</span>
 					    <h5 class="card-title">${ index.prdtitle }</h5>
 					    <div class="btn-line">
-					    	<a href="#" class="btn round-btn">
+					    	<a class="btn round-btn">
 						    	<i class="material-icons heart-btn">favorite</i>
 						    </a>
-						    <a href="#" class="btn round-btn cart">
+						    <a class="btn round-btn cart">
 						    	<i class="material-icons cart-btn">shopping_cart</i>
 						    </a>	
 					    </div>
@@ -127,16 +127,22 @@
 				
 			</div>
 			
+			<a href="#" id="scrollUp" class="scrollUp">
+				<i class="material-icons">keyboard_arrow_up</i>
+			</a>
+
+			
 			<div class="sticker">
 				<a class="circle"></a>
 			</div>
+			
+    	</section>
 			<div class='box'>
 				<div class='wave -one'></div>
 				<div class='wave -two'></div>
 				<div class='wave -three'></div>
 				<div class='title'>ShinsTeller</div>
 			</div>
-    	</section>
     	
     	
 		

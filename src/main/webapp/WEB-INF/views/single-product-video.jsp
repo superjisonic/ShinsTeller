@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
@@ -64,25 +65,25 @@
                                 <div class="single_slider single_sl_four">
                                 	<img class="prdimg" src="/resources/assets/img/product/${ product.prdname }12.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="/video.sst?videoName=${ product.vod_name }"><img src="/resources/assets/img/product/playbtn.png" /></a>
+                                            <a href="javascript: goVideoPage('${ product.vod_name }', '${ product.prdtitle }', ${ product.price });" ><img src="/resources/assets/img/product/playbtn.png"  /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
-                                	<img src="/resources/images/${ product.prdname}2.jpg" />
+                                	<img src="/resources/images/${ product.prdname }2.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
+                                            <a href="javascript: goVideoPage('${ product.vod_name }', '${ product.prdtitle }', ${ product.price });" ><img src="/resources/assets/img/product/playbtn.png"  /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }3.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
+                                            <a href="javascript: goVideoPage('${ product.vod_name }', '${ product.prdtitle }', ${ product.price });" ><img src="/resources/assets/img/product/playbtn.png"  /></a>
                                     </div>
                                 </div>
                                 <div class="single_slider single_sl_four">
                                 	<img src="/resources/images/${ product.prdname }4.jpg" />
                                 	<div class="view_img view_video">
-                                            <a class="view_large_video" href="https://www.youtube.com/embed/DR2c266yWEA"><img src="/resources/assets/img/product/playbtn.png" /></a>
+                                            <a href="javascript: goVideoPage('${ product.vod_name }', '${ product.prdtitle }', ${ product.price });" ><img src="/resources/assets/img/product/playbtn.png"  /></a>
                                     </div>
                                 </div>
                             </div>
@@ -91,6 +92,34 @@
                 </div>
             </div>
         </div>
+        
+        	
+		<div class="sticker">
+				<a class="circle"></a>
+			</div>
+        
+<script type="text/javascript">
+function goVideoPage(videoName, title, price) {
+	if(videoName == "GentHommeVOD" || videoName == "ChesterPantsVOD") {
+	
+	$.ajax({
+			url  : "/videoTimeStamp.sst" , 
+			type : "post" , 
+			data : {videoName : videoName } ,
+			dataType : "text" , 
+			success : function(timeStamp) {
+				//console.log(timeStamp);
+				window.goVideo.getVideoPath(videoName, title, price, timeStamp);
+				//location.href = "/video.sst?videoName="+videoName;
+			}
+		});
+	alert(videoName + ', ' + title + ', ' + price);
+	}
+}
+
+</script>
+        
+        
         
         <!--baner slide end-->
         <div class="product_details">
@@ -147,25 +176,16 @@
                                        <a class="nav-link button_three" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">상품평</a>
                                     </li>
                                     <li>
-                                       <a class="nav-link button_three" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Q&A</a>
+                                       <a class="nav-link button_three" data-toggle="tab" href="#qAnda" role="tab" aria-controls="qAnda" aria-selected="false">Q&A</a>
                                     </li>
                                 </ul>
                             </div> 
                             <div class="tab-content product_details_content">
                                 <div class="tab-pane fade show active" id="info" role="tabpanel" >
                                     <div class="product_d_tab_content">
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail1.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail2.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail3.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail4.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail5.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail6.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail7.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail8.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail9.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail10.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail11.jpg"/>
-                                        <img src="/resources/assets/img/product/${ product.prdname }Detail12.jpg"/>
+                                    	<c:forEach var="i" begin="1" end="24">
+											<img src="/resources/assets/img/product/${ product.prdname }Detail${i}.jpg" alt=""/>
+										</c:forEach>
                                     </div>    
                                 </div>
                                 <div class="tab-pane fade" id="sheet" role="tabpanel">
@@ -175,7 +195,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="first_child">상품번호</td>
-                                                    <td>${ product.prdno }</td>
+                                                    <td><strong>${ product.prdno }</strong></td>
                                                 </tr>
                                                 <tr>
                                                     <td class="first_child">브랜드</td>
@@ -188,15 +208,17 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                        <p>여기에 내용 추가할까?</p>
                                     </div> 
                                 </div>
                                 <div class="tab-pane fade" id="reviews" role="tabpanel">
                                     <div class="product_d_tab_content_inner">
                                         <div class="product_d_tab_content_item">
+                                        <div class="reviewWrite">
+                                        	<img src="/resources/assets/img/product/reviewWriteBtn.png" /> 상품평쓰기
+                                        </div>
                                         <div class="row">
                                             <div class="samll_product_ratting">
-                                            <span class="ratting_number">8.6</span>
+                                            <span class="ratting_number">8.0</span>
                                             <ul>
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-star"></i></a></li>
@@ -243,7 +265,19 @@
                                          </div>    
                                     </div>          
                                 </div>
-                            </div>  
+                            </div>
+                            <div class="tab-pane fade" id="qAnda" role="tabpanel">
+                                    <div class="product_d_tab_content">
+                                    	<div class="QnAcontent">
+                                    	상품에 대한 궁금한 점을 물어보세요.<br>
+										상품 문의  외에 결제, 배송, 교환, 반품문의는 고객센터 1:1 문의하기를 이용하시기 바랍니다.
+										</div>
+										<div class="row QnABtndiv">
+										<div class="QnABtns">반품/배송 기타문의</div>
+										<div class="QnABtns">상품문의</div>
+										</div>
+                                    </div> 
+                                </div>  
 
                         </div>
                     </div>   
@@ -253,720 +287,7 @@
         </div>
         </div>
         <!--product details tab end-->
-        
-        
-        <!--product_details_single_product-->
-        <div class="product_details_s_product mb-40">
-            <div class="container">
-                <div class="product_details_s_product_inner">
-                    <div class="top_title p_details mb-10">
-                            <h2>  11 other products in the same category:</h2>
-                        </div>
-                    <div class="row">
-
-                        <div class="details_s_product_active owl-carousel">
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/images/${ product.prdname }1.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product22.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product12.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product14.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product15.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product16.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single_product categorie">
-                                    <div class="product_thumb">
-                                        <a href="single-product.html"><img src="/resources/assets/img/product/product17.jpg" alt=""></a>
-                                        <div class="product_discount">
-                                            <span>-10%</span>
-                                        </div>
-                                        <div class="product_action">
-                                            <ul>
-                                                <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="quick_view">
-                                            <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <div class="product_content">
-                                        <div class="samll_product_ratting">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="small_product_name">
-                                            <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                        </div>
-                                        <div class="small_product_price">
-                                            <span class="new_price"> $140.00 </span>
-                                            <span class="old_price">  $150.50  </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>     
-            </div>
-        </div>
-        <!--product_details_single_end-->
-        
-        <!--Related_product start-->
-        <div class="product_details_s_product mb-40">
-            <div class="container">
-                <div class="product_details_s_product_inner">
-                    <div class="top_title p_details mb-10">
-                            <h2>  Related Products</h2>
-                        </div>
-                    <div class="single_product__wrapper">
-
-                        <div class="row">
-                            <div class="details_s_product_active related_product owl-carousel">   
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product20.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product22.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product24.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product27.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product28.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product29.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-3 col-sm-6">
-                                    <div class="single_product categorie">
-                                        <div class="product_thumb">
-                                            <a href="single-product.html"><img src="/resources/assets/img/product/product30.jpg" alt=""></a>
-                                            <div class="product_discount">
-                                                <span>-10%</span>
-                                            </div>
-                                            <div class="product_action">
-                                                <ul>
-                                                    <li><a href="#" title=" Add to Wishlist "><i class="fa fa-heart"></i></a></li>
-                                                    <li><a href="#" title=" Add to Compare "><i class="fa fa-retweet"></i></a></li>
-                                                    <li><a href="#" title=" Add to cart "><i class="fa fa-shopping-cart"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="quick_view">
-                                                <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick view"><i class="fa fa-search"></i></a>
-                                            </div>
-
-                                        </div>
-                                        <div class="product_content">
-                                            <div class="samll_product_ratting">
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="small_product_name">
-                                                <a title="Printed Summer Dress" href="single-product.html">Dignissim venenatis</a>
-                                            </div>
-                                            <div class="small_product_price">
-                                                <span class="new_price"> $140.00 </span>
-                                                <span class="old_price">  $150.50  </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>     
-            </div>
-        </div>
-        <!--Related_product end-->
-     
-				
-		<!--footer area start-->
-		<div class="footer_area">
-		    <div class="container">
-		        <div class="copyright_area">
-		            <div class="row">
-		                <div class="col-lg-6 col-md-6 col-sm-6">
-		                    <div class="widget_copyright">
-		                        <p>copyright &copy; 2018 <a href="#">Lionshop</a>. all right reserved</p>
-		                    </div>
-		                </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-		                    <div class="payment">
-		                        <a href="#"><img src="/resources/assets/img/visha/payment.png" alt=""></a>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-		<!--footer area end-->
-		
-		 <!-- modal area start --> 
-           <div class="modal fade" id="modal_box" tabindex="-1" role="dialog"  aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="modal_body">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-5 col-sm-12">
-                                        <div class="modal_tab">  
-                                            <div class="tab-content">
-                                                <div class="tab-pane fade show active" id="tab1" role="tabpanel" >
-                                                    <div class="modal_tab_img">
-                                                        <a href="#"><img src="/resources/assets/img/product/product18.jpg" alt=""></a>    
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="tab2" role="tabpanel">
-                                                    <div class="modal_tab_img">
-                                                        <a href="#"><img src="/resources/assets/img/product/product23.jpg" alt=""></a>    
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="tab3" role="tabpanel">
-                                                    <div class="modal_tab_img">
-                                                        <a href="#"><img src="/resources/assets/img/product/product18.jpg" alt=""></a>    
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="tab4" role="tabpanel">
-                                                    <div class="modal_tab_img">
-                                                        <a href="#"><img src="/resources/assets/img/product/product7.jpg" alt=""></a>    
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal_tab_button">    
-                                                <ul class="nav product_navactive" role="tablist">
-                                                    <li >
-                                                        <a class="nav-link active" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="false"><img src="/resources/assets/img/cart/cart11.jpg" alt=""></a>
-                                                    </li>
-                                                    <li>
-                                                         <a class="nav-link" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"><img src="/resources/assets/img/cart/cart8.jpg" alt=""></a>
-                                                    </li>
-                                                    <li>
-                                                       <a class="nav-link button_three" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"><img src="/resources/assets/img/cart/cart2.jpg" alt=""></a>
-                                                    </li>
-                                                    <li>
-                                                       <a class="nav-link button_three" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab3" aria-selected="false"><img src="/resources/assets/img/cart/cart4.jpg" alt=""></a>
-                                                    </li>
-                                                </ul>
-                                            </div>    
-                                        </div>  
-                                    </div> 
-                                    <div class="col-lg-7 col-md-7 col-sm-12">
-                                        <div class="modal_right">
-                                            <div class="modal_title mb-15">
-                                                <h2>Handbag feugiat</h2> 
-                                            </div>
-                                            <div class="modal_price mb-10">
-                                                <span class="new_price">$64.99</span>    
-                                                <span class="old_price" >$78.99</span>    
-                                            </div>
-                                            <div class="modal_content mb-10">
-                                                <p>Short-sleeved blouse with feminine draped sleeve detail.</p>    
-                                            </div>
-                                            <div class="modal_size mb-15">
-                                               <h2>size</h2>
-                                                <ul>
-                                                    <li><a href="#">s</a></li>
-                                                    <li><a href="#">m</a></li>
-                                                    <li><a href="#">l</a></li>
-                                                    <li><a href="#">xl</a></li>
-                                                    <li><a href="#">xxl</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="modal_add_to_cart mb-15">
-                                                <form action="#">
-                                                    <input min="0" max="100" step="2" value="1" type="number">
-                                                    <button type="submit">add to cart</button>
-                                                </form>
-                                            </div>   
-                                            <div class="modal_description mb-15">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>    
-                                            </div> 
-                                            <div class="modal_social">
-                                                <h2>Share this product</h2>
-                                                <ul>
-                                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                </ul>    
-                                            </div>      
-                                        </div>    
-                                    </div>    
-                                </div>     
-                            </div>
-                        </div>    
-                    </div>
-                </div>
-            </div> 
-            <div class="sticker">
-				<a class="circle"></a>
-			</div>
-    
-          <!-- modal area end --> 
-		
-		
+	
 		<!-- all js here -->
         <script src="/resources/assets/js/vendor/jquery-1.12.0.min.js"></script>
         <script src="/resources/assets/js/popper.js"></script>
